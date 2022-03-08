@@ -5,21 +5,25 @@ import schema from "./gSchema";
 
 import db from "./models";
 
-async function start () {
-    const app: Express = express();
+class Server {
+    public static init () {
+        const server = new Server();
+        return server.start();
+    }
 
-    const server = new ApolloServer({ schema: schema });
+    private async start (): Promise<void> {
+        const app: Express = express();
 
-    await server.start();
-    server.applyMiddleware({ app, path: "/graph"})
-
-    const port = process.env.PORT || 3030;
-
-    db.sequelize.sync().then(() => {
-        app.listen(port, () => {
-            console.log(`listening at port ${ port }`);   
-        })
-    })
+        const server = new ApolloServer({ schema: schema });
+    
+        await server.start();
+        server.applyMiddleware({ app, path: "/graph"})
+    
+        const port = process.env.PORT || 3030;
+    
+        await db.sequelize.sync({});
+        app.listen(port, () => { console.log(`listening at port ${ port }`) });
+    }
 }
 
-start();
+Server.init();
