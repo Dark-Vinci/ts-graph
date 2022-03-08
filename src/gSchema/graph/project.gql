@@ -1,0 +1,11 @@
+# import User from "user.gql"
+
+type Project {
+    id: ID
+    title: String
+    users: [ User ]
+}
+
+input ProjectCreation {
+    title: String!
+}

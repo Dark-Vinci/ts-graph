@@ -1,0 +1,13 @@
+# import User from "user.gql"
+# import UserCreation from "user.gql"
+# import Project from "project.gql"
+# import ProjectCreation from "project.gql"
+
+type Mutation {
+    createUser(inp: UserCreation): User
+    createProject(inp: ProjectCreation): Project
+    deleteUser(id: ID): User
+    updateUser(id: ID): User
+    deleteProject(id: ID): Project
+    updateProject(id: ID): Project
+}

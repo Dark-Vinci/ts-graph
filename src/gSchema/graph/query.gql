@@ -1,0 +1,9 @@
+# import User from "user.gql"
+# import Project from "project.gql"
+
+type Query {
+    getUsers: [ User ]
+    getUserById(id: ID!): User
+    getProjects: [ Project ]
+    getProjectById(id: ID!): Project
+}
