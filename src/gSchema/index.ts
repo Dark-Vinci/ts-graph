@@ -10,12 +10,12 @@ import * as queryDef from "./graph/query.gql";
 import * as mutationDef from "./graph/mutation.gql";
 
 class GraphSchema {
-    public static init () {
+    public static init (): GraphQLSchema {
         const schema = new GraphSchema();
         return schema.schemaFunc;
     }
 
-    private get schemaFunc () {
+    private get schemaFunc (): GraphQLSchema {
         const schema: GraphQLSchema = makeExecutableSchema({
             typeDefs: [ userDef, projDef, queryDef, mutationDef ],
             resolvers: resolver,

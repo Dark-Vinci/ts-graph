@@ -1,9 +1,9 @@
 import express from "express";
 import db from "./models";
 
-import { projectSeed } from "./seeders/project.seeders";
-import { projAssSeeders } from "./seeders/projAssign.seeders";
-import { users } from "./seeders/users.seedes";
+// import { projectSeed } from "./seeders/project.seeders";
+// import { projAssSeeders } from "./seeders/projAssign.seeders";
+// import { users } from "./seeders/users.seedes";
 
 const app = express();
 
