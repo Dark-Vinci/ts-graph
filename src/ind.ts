@@ -17,9 +17,9 @@ class Server {
         const server = new ApolloServer({ schema: schema });
     
         await server.start();
-        server.applyMiddleware({ app, path: "/graph"})
+        server.applyMiddleware({ app, path: "/graph" })
     
-        const port = process.env.PORT || 3030;
+        const port: string | 3030 = process.env.PORT || 3030;
     
         await db.sequelize.sync({});
         app.listen(port, () => { console.log(`listening at port ${ port }`) });
