@@ -1,8 +1,7 @@
 import express, { Express } from "express";
 import { ApolloServer } from "apollo-server-express";
-// import cors from "cors";
-import schema from "./gSchema";  
 
+import schema from "./gSchema"; 
 import db from "./models";
 
 class Server {
